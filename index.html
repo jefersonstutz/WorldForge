@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#050908">
+  <title>OSAC // Terminal de Investigação</title>
+  <link rel="stylesheet" href="styles.css?v=13">
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="theme-switch" role="group" aria-label="Cor do terminal">
+    <span>COR DO TERMINAL</span>
+    <button id="theme-toggle" type="button" aria-pressed="false"><i></i><b>ROXO</b></button>
+  </div>
+  <div id="boot" class="screen boot-screen">
+    <div class="boot-inner">
+      <p class="eyebrow">ORGANIZAÇÃO SEGREGADA ANTI-COSMOS</p>
+      <pre class="sigil" aria-hidden="true">   ╱╲
+  ╱◉ ╲
+ ╱____╲</pre>
+      <div id="boot-log" class="boot-log" aria-live="polite"></div>
+      <button id="boot-enter" class="terminal-button hidden">INICIAR SESSÃO</button>
+    </div>
+  </div>
+
+  <div id="protocol" class="screen protocol-screen hidden">
+    <main class="protocol-card">
+      <p class="eyebrow">PROTOCOLO DE ACESSO // NÍVEL PROVISÓRIO</p>
+      <h1>Você não foi convidado.<br>Você foi <em>selecionado.</em></h1>
+      <p>O conteúdo deste terminal é propriedade da OSAC. Observar é participar. Compreender é assumir responsabilidade.</p>
+      <label class="check-row"><input id="confidentiality" type="checkbox"><span>Aceito o protocolo de confidencialidade e as consequências de acesso.</span></label>
+      <label class="field-label" for="operator-name">IDENTIFICAÇÃO DO OPERADOR</label>
+      <input id="operator-name" class="terminal-input" maxlength="24" placeholder="DIGITE SEU NOME" autocomplete="off">
+      <button id="accept-protocol" class="terminal-button" disabled>ACEITAR E CONECTAR</button>
+    </main>
+  </div>
+
+  <div id="session-reveal" class="session-reveal hidden" aria-hidden="true">
+    <img src="assets/world-forge-reveal.png" alt="World Forge — um investigador diante de entidades cósmicas">
+    <div class="reveal-vignette"></div>
+    <div class="reveal-scanlines"></div>
+    <div class="reveal-status"><span>TRANSMISSÃO EXTRACOSMOLÓGICA INTERCEPTADA</span><button id="reveal-continue" class="terminal-button">PROSSEGUIR PARA O TERMINAL</button></div>
+  </div>
+
+  <div id="terminal" class="terminal hidden">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">◉</span><div><strong>OSAC</strong><small>TERMINAL CORTEX // NÓ 07</small></div></div>
+      <div class="status-strip"><span><i class="pulse"></i> REDE SEGURA</span><span id="clock">00:00:00</span><span id="clearance">ACESSO: PROVISÓRIO</span></div>
+    </header>
+    <aside class="sidebar">
+      <nav id="nav" aria-label="Módulos do terminal">
+        <button data-view="dashboard" class="active"><span>01</span> VISÃO GERAL</button>
+        <button data-view="case"><span>02</span> CASO ATUAL <b id="case-dot" class="nav-dot"></b></button>
+        <button data-view="files"><span>03</span> ARQUIVOS <b id="files-count" class="badge">3</b></button>
+        <button data-view="board"><span>04</span> MURAL <b id="board-count" class="badge">0/3</b></button>
+        <button data-view="messages"><span>05</span> MENSAGENS <b id="message-count" class="badge alert">2</b></button>
+        <button data-view="database"><span>06</span> BANCO OSAC</button>
+        <button data-view="profile"><span>07</span> OPERADOR</button>
+      </nav>
+      <div class="sidebar-foot"><small>SINAL DE CÓRTEX</small><div class="signal"><i></i><i></i><i></i><i></i><i></i></div><span id="cortex-state">ESTÁVEL</span></div>
+    </aside>
+    <main id="workspace" class="workspace"></main>
+    <aside id="intel-panel" class="intel-panel">
+      <div class="panel-head"><span>REGISTRO DE ATIVIDADE</span><button id="close-intel" aria-label="Fechar">×</button></div>
+      <div id="activity-log" class="activity-log"></div>
+    </aside>
+    <footer class="terminal-footer"><span>OSAC.INT // SESSÃO <b id="session-id"></b></span><button id="intel-toggle">ATIVIDADE [A]</button><span id="footer-whisper">NÃO HÁ NADA ATRÁS DE VOCÊ.</span></footer>
+  </div>
+
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true"><div id="modal-content" class="modal-content"></div></div>
+  <div id="toast" class="toast hidden" aria-live="polite"></div>
+  <script src="app.js?v=13"></script>
+</body>
+</html>

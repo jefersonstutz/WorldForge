@@ -1,0 +1,438 @@
+# WORLD FORGE
+
+## Product Requirements Document (PRD)
+
+### Versão 1.0 — MVP
+
+---
+
+# 1. Visão do Produto
+
+## Visão Estratégica
+
+WORLD FORGE é uma plataforma de experiências narrativas investigativas que permite explorar universos ficcionais através de documentos, evidências e conexões lógicas.
+
+Diferentemente de jogos tradicionais, livros digitais ou wikis, o produto coloca o usuário no papel de investigador, incentivando-o a descobrir a verdade por meio da análise de informações fragmentadas.
+
+O primeiro MVP apresenta o universo da Organização Segregada Anti-Cosmos (OSAC), introduzindo seus conceitos, personagens, regras e ameaças através de um caso investigativo.
+
+O objetivo não é contar uma história.
+
+O objetivo é fazer o usuário descobri-la.
+
+---
+
+## Missão
+
+Transformar a descoberta de universos narrativos em experiências investigativas altamente imersivas.
+
+---
+
+## Visão de Longo Prazo
+
+Evoluir de uma experiência narrativa para uma plataforma onde autores possam criar, organizar e publicar seus próprios universos investigativos.
+
+---
+
+## Tagline
+
+**Build Worlds. Tell Stories. Create Legends.**
+
+---
+
+# 2. Problema
+
+Narrativas digitais normalmente apresentam dois extremos:
+
+* histórias lineares, onde o usuário apenas consome conteúdo;
+* jogos complexos, onde mecânicas acabam competindo com a narrativa.
+
+Existe espaço para uma experiência intermediária, na qual o usuário participa ativamente da descoberta do universo sem depender de combate, RPG ou sistemas tradicionais de progressão.
+
+---
+
+# 3. Hipótese
+
+Usuários interessados em horror cósmico, mistério e worldbuilding permanecerão mais engajados quando:
+
+* descobrirem a narrativa por investigação;
+* conectarem evidências para compreender acontecimentos;
+* forem recompensados com conhecimento em vez de poder;
+* perceberem que o universo continua existindo independentemente deles.
+
+---
+
+# 4. Objetivo do MVP
+
+Validar que uma experiência baseada em investigação narrativa consegue:
+
+* apresentar um universo original;
+* despertar curiosidade;
+* incentivar exploração;
+* gerar desejo de continuar investigando novos casos.
+
+---
+
+# 5. Escopo do MVP
+
+O MVP contempla apenas:
+
+* Terminal da OSAC
+* Caso 001
+* Sistema de documentos
+* Sistema de mensagens
+* Banco de dados da OSAC
+* Mural de investigação
+* Progressão baseada em conhecimento
+* Final cinematográfico com Mandela
+
+Não fazem parte do MVP:
+
+* editor de mundos
+* multiplayer
+* criação de casos
+* combate
+* inventário
+* RPG
+* sistema de escolhas ramificadas complexo
+
+---
+
+# 6. Público-Alvo
+
+## Primário
+
+* fãs de horror cósmico
+* leitores de SCP Foundation
+* jogadores de Control
+* jogadores de Alan Wake
+* fãs de Outer Wilds
+* fãs de House of Leaves
+* leitores de Lovecraft
+
+Faixa etária:
+
+16–40 anos
+
+---
+
+## Secundário
+
+* escritores
+* mestres de RPG
+* criadores de universos
+* fãs de ARGs
+* jogadores de jogos narrativos
+
+---
+
+# 7. Personas
+
+## Persona 1 — O Investigador
+
+Objetivo:
+
+Descobrir a verdade por trás dos acontecimentos.
+
+Motivadores:
+
+* mistérios
+* investigação
+* quebra-cabeças
+* suspense
+
+---
+
+## Persona 2 — O Explorador de Lore
+
+Objetivo:
+
+Conhecer profundamente o universo.
+
+Motivadores:
+
+* documentos
+* cronologias
+* organizações
+* entidades
+* teorias
+
+---
+
+## Persona 3 — O Criador
+
+Objetivo futuro:
+
+Criar seus próprios universos dentro da plataforma.
+
+---
+
+# 8. Product Constitution
+
+## P1 — Toda interface pertence ao universo.
+
+Não existem menus genéricos.
+
+Tudo faz parte do Terminal OSAC.
+
+---
+
+## P2 — Conhecimento é progressão.
+
+O usuário evolui porque compreende melhor o universo.
+
+Nunca porque ganhou experiência.
+
+---
+
+## P3 — Curiosidade é mais importante que medo.
+
+O horror nasce da descoberta.
+
+Nunca de jumpscares.
+
+---
+
+## P4 — O usuário é ele mesmo.
+
+Não existe avatar jogável.
+
+---
+
+## P5 — Todo mistério possui resposta.
+
+Mesmo que ainda não tenha sido revelada.
+
+---
+
+## P6 — O universo é coerente.
+
+Toda informação segue as regras estabelecidas.
+
+---
+
+## P7 — O terminal é um personagem.
+
+Ele conversa.
+
+Atualiza.
+
+Esconde.
+
+Libera.
+
+Também sofre interferências.
+
+---
+
+## P8 — Descobertas precisam ser conquistadas.
+
+O usuário deve conectar informações.
+
+Nunca receber respostas prontas.
+
+---
+
+## P9 — Menos é mais.
+
+Cada elemento precisa justificar sua existência.
+
+---
+
+## P10 — A experiência vem antes da tecnologia.
+
+---
+
+## P11 — O produto é modular.
+
+Cada caso é independente.
+
+---
+
+## P12 — O usuário nunca deve sentir que está usando um CRUD.
+
+Ele está conduzindo uma investigação.
+
+---
+
+## P13 — O universo continua existindo sem o usuário.
+
+O usuário entra em um mundo que já está em movimento.
+
+---
+
+# 9. Jornada do Usuário
+
+1. Recebe acesso ao Terminal OSAC.
+2. Aceita protocolo de confidencialidade.
+3. Aprende a utilizar o sistema.
+4. Recebe o Caso 001.
+5. Analisa documentos.
+6. Explora fotografias.
+7. Lê mensagens dos agentes.
+8. Organiza evidências.
+9. Conecta pistas.
+10. Desbloqueia novos arquivos.
+11. Descobre a verdade.
+12. Presencia a tentativa de ataque do Mandela.
+13. Observa a intervenção de um Caçador.
+14. Recebe aprovação da OSAC.
+15. Visualiza o Caso 002 bloqueado.
+
+---
+
+# 10. Core Loop
+
+Receber novos arquivos
+
+↓
+
+Analisar documentos
+
+↓
+
+Relacionar evidências
+
+↓
+
+Montar hipóteses
+
+↓
+
+Validar conexões
+
+↓
+
+Receber novos acessos
+
+↓
+
+Expandir investigação
+
+↓
+
+Descobrir mais do universo
+
+↓
+
+Repetir ciclo
+
+---
+
+# 11. Fluxo da Experiência
+
+Boot do Terminal
+
+↓
+
+Login
+
+↓
+
+Painel Principal
+
+↓
+
+Caso Atual
+
+↓
+
+Arquivos
+
+↓
+
+Evidências
+
+↓
+
+Mural
+
+↓
+
+Novos Arquivos
+
+↓
+
+Mensagens
+
+↓
+
+Conclusão do Caso
+
+↓
+
+Avaliação
+
+↓
+
+Novo Caso Bloqueado
+
+---
+
+# 12. Mecânicas Principais
+
+## Investigação
+
+Analisar documentos.
+
+---
+
+## Exploração
+
+Descobrir conteúdos escondidos.
+
+---
+
+## Conexão
+
+Relacionar evidências.
+
+---
+
+## Progressão
+
+Desbloquear novos níveis de acesso.
+
+---
+
+## Lore
+
+Expandir conhecimento opcional.
+
+---
+
+## Interferência
+
+O Córtex 0 altera discretamente a interface conforme a investigação avança.
+
+---
+
+# 13. Arquitetura da Informação
+
+Módulos principais:
+
+* Boot
+* Login
+* Dashboard
+* Caso Atual
+* Arquivos
+* Evidências
+* Mural de Investigação
+* Mensagens
+* Banco de Dados OSAC
+* Perfil
+* Configurações
+
+Cada módulo existe diegeticamente como parte do Terminal OSAC.
+
+---
+
+# 14. Critérios de Sucesso do MVP
+
+O MVP será considerado validado quando demonstrar que os usuários:
+
+* concluem a investigação do Caso 001;
+* compreendem o funcionamento básico do Terminal OSAC;
+* utilizam o Mural de Investigação para avançar;
+* demonstram interesse em continuar explorando novos casos;
+* reconhecem o WORLD FORGE como uma experiência investigativa, e não como um jogo convencional ou uma wiki.
