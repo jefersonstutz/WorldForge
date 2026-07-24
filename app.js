@@ -139,15 +139,15 @@ const extraCases=[
 ];
 
 const captureRules={
- clock:['todos os relógios da vitrine já marcam 03:17'],cut:['03:17:00 — [interferência]'],silence:['toda comunicação com santa eulália foi interrompida'],
- figure:['a figura nela registrada não constava no local'],shadows:['as sombras apontam para ele'],witness:['a figura não estava lá'],
- portrait:['na segunda, há seis'],dissociation:['me chama de mãe. eu sou esposa dele'],memory:['perdeu primeiro as lembranças recentes'],
- 'c2-lux':['a luz solar atravessava as janelas, mas terminava a 40 cm do piso'],'c2-power':['tensão estável durante todo o período'],'c2-cross':['o escurecimento movia-se contra a posição solar'],
- 'c2-shift':['a escuridão ocupa uma posição diferente'],'c2-steps':['o assoalho não rangia'],'c2-blink':['pisquei por menos de um segundo'],
- 'c3-pulse':['contraíam-se a cada 71 segundos'],'c3-cells':['cada célula compartilha a mesma assinatura'],'c3-body':['o tecido do terceiro andar contraiu no mesmo instante'],
- 'c3-drain':['uma massa emerge de outro dreno'],'c3-pool':['uma massa submergiu em uma poça rasa'],'c3-swim':['a massa mergulhou como se houvesse um oceano'],
- 'c4-plans':['o edifício possui 18, 21, 17 e 24 apartamentos'],'c4-volume':['o volume interno medido excede o externo'],'c4-cross':['dois corredores ocuparam a mesma coordenada'],
- 'c4-door':['uma porta surge entre dois quadros consecutivos'],'c4-home':['minha porta estava três andares abaixo'],'c4-path':['eles formam uma rota contínua']
+ clock:['todos os relógios da vitrine já marcam 03:17','every clock in the window already reads 03:17'],cut:['03:17:00 — [interferência]','03:17:00 — [interference]'],silence:['toda comunicação com santa eulália foi interrompida','all communication with santa eulália was severed'],
+ figure:['a figura nela registrada não constava no local','the figure recorded in it was not present at the location'],shadows:['as sombras apontam para ele','the shadows point toward him'],witness:['a figura não estava lá','the figure was not there'],
+ portrait:['na segunda, há seis','in the second, there are six'],dissociation:['me chama de mãe. eu sou esposa dele','calls me mother. i am his wife'],memory:['perdeu primeiro as lembranças recentes','first lost recent memories'],
+ 'c2-lux':['a luz solar atravessava as janelas, mas terminava a 40 cm do piso','sunlight passed through the windows but ended 40 cm above the floor'],'c2-power':['tensão estável durante todo o período','stable voltage throughout the period'],'c2-cross':['o escurecimento movia-se contra a posição solar','the darkness moved against the sun’s position'],
+ 'c2-shift':['a escuridão ocupa uma posição diferente','the darkness occupies a different position'],'c2-steps':['o assoalho não rangia','the floorboards did not creak'],'c2-blink':['pisquei por menos de um segundo','i blinked for less than a second'],
+ 'c3-pulse':['contraíam-se a cada 71 segundos','contracted every 71 seconds'],'c3-cells':['cada célula compartilha a mesma assinatura','every cell shares the same unknown mitochondrial signature'],'c3-body':['o tecido do terceiro andar contraiu no mesmo instante','tissue on the third floor contracted at the same instant'],
+ 'c3-drain':['uma massa emerge de outro dreno','a mass emerges from another drain'],'c3-pool':['uma massa submergiu em uma poça rasa','a mass fully submerged in a shallow pool'],'c3-swim':['a massa mergulhou como se houvesse um oceano','the mass dove as if an ocean lay beneath the floor'],
+ 'c4-plans':['o edifício possui 18, 21, 17 e 24 apartamentos','the building contains 18, 21, 17, and 24 apartments'],'c4-volume':['o volume interno medido excede o externo','the measured internal volume exceeds the external volume'],'c4-cross':['dois corredores ocuparam a mesma coordenada','two corridors began occupying the same coordinate'],
+ 'c4-door':['uma porta surge entre dois quadros consecutivos','a door appears between two consecutive frames'],'c4-home':['minha porta estava três andares abaixo','my door was three floors below'],'c4-path':['eles formam uma rota contínua','they form a continuous route']
 };
 
 function save(){localStorage.setItem('osac-state',JSON.stringify(state));}
@@ -161,15 +161,15 @@ function activeConnections(){return state.currentCase===1?state.connections:case
 function activeFinale(){return state.currentCase===1?state.finale:caseRun().finale}
 function totalZones(){return state.currentCase===1?3:extraCase().zones.length}
 function campaignCases(){return [{id:1,code:'OSAC-001',title:'O Silêncio de Santa Eulália',entity:'MANDELA'},...extraCases]}
-function log(text){const item={text,time:new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit'})};state.activities.unshift(item);state.activities=state.activities.slice(0,20);save();renderActivity();}
+function log(text){const item={text,time:new Date().toLocaleTimeString(window.OSAC_I18N?.locale||'pt-BR',{hour:'2-digit',minute:'2-digit'})};state.activities.unshift(item);state.activities=state.activities.slice(0,20);save();renderActivity();}
 function toast(text){const t=$('#toast');t.textContent=text;t.classList.remove('hidden');clearTimeout(toast.timer);toast.timer=setTimeout(()=>t.classList.add('hidden'),3200)}
 function boot(){
- if(state.entered){$('#boot').classList.add('hidden');$('.theme-switch').classList.add('hidden');$('#terminal').classList.remove('hidden');initTerminal();return}
+ if(state.entered){$('#boot').classList.add('hidden');$('.startup-controls').classList.add('hidden');$('#terminal').classList.remove('hidden');initTerminal();return}
  const lines=['OSAC BIOS v4.11.7','Verificando integridade neural........ OK','Estabelecendo túnel criptográfico..... OK','Sincronizando Córtex.................. INDETERMINADO','Credencial externa detectada.'];let i=0;
  const next=()=>{if(i<lines.length){$('#boot-log').innerHTML+=`<div>&gt; ${lines[i++]}</div>`;setTimeout(next,240)}else $('#boot-enter').classList.remove('hidden')};next();
 }
 $('#boot-enter').onclick=()=>{
- $('#boot-enter').disabled=true;$('.theme-switch').classList.add('hidden');
+ $('#boot-enter').disabled=true;$('.startup-controls').classList.add('hidden');
  document.body.classList.add('session-glitch');
  setTimeout(()=>{
   $('#boot').classList.add('hidden');document.body.classList.remove('session-glitch');
@@ -179,14 +179,14 @@ $('#boot-enter').onclick=()=>{
 };
 $('#reveal-continue').onclick=()=>{
  const reveal=$('#session-reveal');reveal.classList.add('glitch');
- setTimeout(()=>{reveal.classList.add('hidden');reveal.classList.remove('glitch','ready');reveal.setAttribute('aria-hidden','true');$('.theme-switch').classList.remove('hidden');$('#protocol').classList.remove('hidden')},450);
+  setTimeout(()=>{reveal.classList.add('hidden');reveal.classList.remove('glitch','ready');reveal.setAttribute('aria-hidden','true');$('.startup-controls').classList.remove('hidden');$('#protocol').classList.remove('hidden')},450);
 };
 function validateProtocol(){ $('#accept-protocol').disabled=!($('#confidentiality').checked && $('#operator-name').value.trim().length>=2) }
 $('#confidentiality').onchange=validateProtocol;$('#operator-name').oninput=validateProtocol;
-$('#accept-protocol').onclick=()=>{state.name=$('#operator-name').value.trim().toUpperCase();state.entered=true;save();$('#protocol').classList.add('hidden');$('.theme-switch').classList.add('hidden');$('#terminal').classList.remove('hidden');initTerminal();log('Protocolo de confidencialidade aceito.');toast('ACESSO PROVISÓRIO CONCEDIDO')};
+$('#accept-protocol').onclick=()=>{state.name=$('#operator-name').value.trim().toUpperCase();state.entered=true;save();$('#protocol').classList.add('hidden');$('.startup-controls').classList.add('hidden');$('#terminal').classList.remove('hidden');initTerminal();log('Protocolo de confidencialidade aceito.');toast('ACESSO PROVISÓRIO CONCEDIDO')};
 function initTerminal(){
  $('#session-id').textContent=Math.random().toString(36).slice(2,8).toUpperCase();
- setInterval(()=>$('#clock').textContent=new Date().toLocaleTimeString('pt-BR'),1000);
+ setInterval(()=>$('#clock').textContent=new Date().toLocaleTimeString(window.OSAC_I18N?.locale||'pt-BR'),1000);
  $$('#nav button').forEach(b=>b.onclick=()=>navigate(b.dataset.view));
  $('#close-intel').onclick=()=>{const terminal=document.querySelector('.terminal');terminal.classList.remove('intel-open');if(innerWidth>=1100)terminal.classList.add('intel-closed')};
  $('#intel-toggle').onclick=()=>{const terminal=document.querySelector('.terminal');terminal.classList.remove('intel-closed');terminal.classList.toggle('intel-open')};
